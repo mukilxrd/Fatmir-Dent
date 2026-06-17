@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatmir Dent | Luxury Dental Clinic Tetovo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+:root{
+--gold:#d4af37;
+--gold-light:#f5d67b;
+--black:#050505;
+--dark:#111;
+--gray:#1c1c1c;
+--white:#fff;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.75)),
+url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=2000&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content{
+max-width:1000px;
+}
+
+.hero h1{
+font-family:'Cinzel',serif;
+font-size:6rem;
+font-weight:800;
+color:var(--gold);
+letter-spacing:4px;
+text-shadow:0 0 20px rgba(212,175,55,.4);
+}
+
+.hero p{
+font-size:1.4rem;
+margin-top:20px;
+line-height:1.8;
+color:#ddd;
+}
+
+.btn{
+display:inline-block;
+margin-top:35px;
+padding:18px 45px;
+background:linear-gradient(45deg,var(--gold),var(--gold-light));
+color:black;
+text-decoration:none;
+font-weight:700;
+border-radius:50px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 30px rgba(212,175,55,.4);
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+z-index:999;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(10px);
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-family:'Cinzel',serif;
+font-size:2rem;
+font-weight:800;
+color:var(--gold);
+}
+
+nav a{
+margin-left:30px;
+text-decoration:none;
+color:white;
+font-weight:500;
+}
+
+nav a:hover{
+color:var(--gold);
+}
+
+section{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:3rem;
+font-family:'Cinzel',serif;
+color:var(--gold);
+margin-bottom:60px;
+}
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+}
+
+.about-text h3{
+font-size:2rem;
+margin-bottom:20px;
+color:var(--gold);
+}
+
+.about-text p{
+line-height:1.9;
+color:#ddd;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(212,175,55,.15);
+padding:35px;
+border-radius:20px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:var(--gold);
+}
+
+.card h3{
+color:var(--gold);
+margin-bottom:15px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:15px;
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.04);
+}
+
+.reviews{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.review{
+background:rgba(255,255,255,.04);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(212,175,55,.1);
+}
+
+.review h4{
+color:var(--gold);
+margin-bottom:10px;
+}
+
+.stars{
+color:gold;
+margin-bottom:10px;
+font-size:1.1rem;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.info-box{
+background:#111;
+padding:40px;
+border-radius:20px;
+}
+
+.info-box h3{
+color:var(--gold);
+margin-bottom:20px;
+}
+
+.hours{
+line-height:2;
+}
+
+iframe{
+width:100%;
+height:400px;
+border:none;
+border-radius:20px;
+}
+
+footer{
+background:#000;
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(212,175,55,.2);
+}
+
+.gold{
+color:var(--gold);
+}
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:3.5rem;
+}
+
+.about,
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+nav{
+display:none;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Fatmir Dent</div>
+<nav>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1>FATMIR DENT</h1>
+<p>
+Luxury Dental Care in Tetovo.<br>
+Advanced Dentistry • Premium Experience • Beautiful Smiles
+</p>
+
+<a href="#contact" class="btn">Book Consultation</a>
+</div>
+</section>
+
+<section id="about">
+<h2 class="section-title">About Us</h2>
+
+<div class="about">
+<img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80">
+
+<div class="about-text">
+<h3>Exceptional Dental Excellence</h3>
+
+<p>
+At Fatmir Dent, every patient receives personalized dental care
+within a sophisticated and comfortable environment.
+Our clinic combines modern technology, precision treatment,
+and a commitment to creating healthy, confident smiles.
+</p>
+
+<br>
+
+<p>
+From preventive dentistry to cosmetic smile transformations,
+our mission is to provide world-class dental services while
+maintaining the highest standards of comfort and care.
+</p>
+</div>
+</div>
+</section>
+
+<section id="services">
+<h2 class="section-title">Premium Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Dental Implants</h3>
+<p>Advanced implant solutions for long-lasting tooth replacement.</p>
+</div>
+
+<div class="card">
+<h3>Cosmetic Dentistry</h3>
+<p>Smile makeovers, veneers, whitening, and aesthetic treatments.</p>
+</div>
+
+<div class="card">
+<h3>Orthodontics</h3>
+<p>Modern alignment treatments for adults and children.</p>
+</div>
+
+<div class="card">
+<h3>Professional Whitening</h3>
+<p>Brighten your smile with premium whitening solutions.</p>
+</div>
+
+<div class="card">
+<h3>Preventive Care</h3>
+<p>Regular examinations, cleaning, and oral health maintenance.</p>
+</div>
+
+<div class="card">
+<h3>Emergency Dentistry</h3>
+<p>Prompt treatment for urgent dental issues.</p>
+</div>
+
+</div>
+</section>
+
+<section id="gallery">
+<h2 class="section-title">Luxury Clinic Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1588776814546-ec7e4f90d52f?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1588776814627-6f2f29f6d7cf?auto=format&fit=crop&w=1200&q=80">
+
+<img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80">
+
+</div>
+</section>
+
+<section id="reviews">
+<h2 class="section-title">Patient Testimonials</h2>
+
+<div class="reviews">
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<h4>Arben M.</h4>
+<p>
+Excellent experience from start to finish.
+Professional service and outstanding results.
+</p>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<h4>Sara T.</h4>
+<p>
+The clinic feels modern and luxurious.
+The team made me feel comfortable throughout treatment.
+</p>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<h4>Blerim K.</h4>
+<p>
+Exceptional attention to detail and fantastic dental care.
+Highly recommended.
+</p>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<h4>Elira H.</h4>
+<p>
+Very professional and friendly atmosphere.
+I am extremely happy with my smile.
+</p>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<h4>Gent R.</h4>
+<p>
+Top-quality service and advanced equipment.
+Everything exceeded expectations.
+</p>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<h4>Luan D.</h4>
+<p>
+One of the best dental experiences I have had.
+Beautiful clinic and excellent staff.
+</p>
+</div>
+
+</div>
+
+<p style="margin-top:30px;text-align:center;color:#aaa;">
+Replace testimonials with verified customer reviews before publishing.
+</p>
+
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact & Location</h2>
+
+<div class="contact-grid">
+
+<div class="info-box">
+
+<h3>Fatmir Dent</h3>
+
+<p><strong>Address:</strong><br>
+29 November, Tetovo 1220, North Macedonia
+</p>
+
+<br>
+
+<p><strong>Phone:</strong><br>
++389 70 652 698
+</p>
+
+<br>
+
+<h3>Working Hours</h3>
+
+<div class="hours">
+Monday: 08:00 – 16:00<br>
+Tuesday: 08:00 – 16:00<br>
+Wednesday: 08:00 – 16:00<br>
+Thursday: 08:00 – 16:00<br>
+Friday: 08:00 – 16:00<br>
+Saturday: Closed<br>
+Sunday: Closed
+</div>
+
+<br>
+
+<a href="tel:+38970652698" class="btn">
+Call Now
+</a>
+
+</div>
+
+<div>
+
+<iframe
+src="https://maps.google.com/maps?q=Tetovo&t=&z=13&ie=UTF8&iwloc=&output=embed">
+</iframe>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+<h2 class="gold">Fatmir Dent</h2>
+<p>Luxury Dental Care • Tetovo • North Macedonia</p>
+<br>
+<p>© 2026 Fatmir Dent. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
